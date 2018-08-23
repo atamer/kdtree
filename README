@@ -1,0 +1,32 @@
+This is the README file
+
+This project developed using Spring Boot , HATEOS , Restful services, Hamcrest , Junit
+
+I have implemented KDTree algorithm in order to  find the nn .
+All the information about algorithm can be found in https://www.coursera.org/learn/algorithms-part1/lecture/Yionu/kd-trees link
+
+I have choosen the decisions while constructing KDTree
+    Which dimension do we split :  alternate
+    Which value do we split     :  center
+    When do we stop             :   fewer than  m (3)
+
+
+I  added  HATEOAS support for rest services.
+
+You can see the stores list and nn list in the google map . (If you can not see google map properly , token may be expired ,  recreate token and replace current one)
+
+There are three different HATEOS supported rest url
+
+/store -> returns all stores with minimal properties
+/store /${uuid.+}  --> return requested store with detail
+/store /neighbors  --> return nn of requested point
+
+
+You can enter store.json file location by system variable if not any system variable found with name json_file_name  , /json/stores.json used as default
+
+Warning : The KDTree structure is immutable so it support concurrency , you must not change immutable behaviour of KDTree for any reason
+
+
+
+
+
